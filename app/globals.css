@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F8F8E1;
   --foreground: #171717;
+  --container-bg: #FF90BB;
+  --button-color: #8ACCD5;
 }
 
 @theme inline {
@@ -14,13 +16,91 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #FFC1DA;
+    --foreground: #171717;
+    --container-bg: #FF90BB;
+    --button-color: #8ACCD5;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: url('/assets/svg/bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes modal-pop {
+  0% {
+    transform: translateY(20px) scale(0.95);
+    opacity: 0;
+    box-shadow: 0 0 0 0 #e5e7eb;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+    opacity: 1;
+    box-shadow: 0 12px 0 0 #e5e7eb;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    box-shadow: 0 8px 0 0 #e5e7eb;
+  }
+}
+
+/* Form input animations and styling */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  transition: all 0.2s ease;
+  border-radius: 0.375rem;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #FF90BB;
+  box-shadow: 0 0 0 3px rgba(255, 144, 187, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Table animations */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+}
+
+td {
+  transition: all 0.2s ease;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
