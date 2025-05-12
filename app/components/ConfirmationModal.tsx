@@ -31,7 +31,6 @@ export default function ConfirmationModal({
 
     if (isOpen) {
       document.addEventListener('keydown', handleEsc);
-      // Prevent scrolling of the body when modal is open
       document.body.style.overflow = 'hidden';
     }
 

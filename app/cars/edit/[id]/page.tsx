@@ -20,7 +20,7 @@ export default function EditCarPage({ params }: { params: { id: string } }) {
       <div className="min-h-screen bg-gray-50 p-4">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white p-6 rounded-lg shadow-md text-center">
-            <p className="text-red-500">Please provide a Neptun code in the URL parameters.</p>
+            <p className="text-red-500">Neptun code is missing</p>
             <a href="/" className="text-blue-500 hover:underline block mt-4">
               Go to Home Page
             </a>

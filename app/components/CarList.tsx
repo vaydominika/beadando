@@ -250,8 +250,7 @@ export default function CarList({ neptunCode }: CarListProps) {
         onConfirm={confirmDelete}
         title="Delete Car"
         message="Are you sure you want to delete this car? This action cannot be undone."
-        confirmText="Yes, Delete"
-        cancelText="Cancel"
+        confirmText="Delete"
       />
     </div>
   );

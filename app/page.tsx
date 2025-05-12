@@ -20,7 +20,6 @@ export default function Home() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmittedNeptun(neptunCode);
-    // Update URL with the Neptun code
     window.history.pushState({}, '', `/?neptun=${neptunCode}`);
   };
 
@@ -29,13 +28,13 @@ export default function Home() {
       <div className="max-w-4xl mx-auto">
         
         <div className="bg-white p-6 rounded-lg shadow-[0_5px_0_0_#e5e7eb] mb-8">
-          <h2 className="text-xl font-semibold mb-4">Enter Your Neptun Code</h2>
+          <h2 className="text-xl font-semibold mb-4">Neptun code:</h2>
           <form onSubmit={handleSubmit} className="flex gap-2">
             <input
               type="text"
               value={neptunCode}
               onChange={(e) => setNeptunCode(e.target.value)}
-              placeholder="Enter Neptun code (e.g., ABC123)"
+              placeholder="Enter your neptun code"
               className="flex-1 p-2 border border-gray-300 rounded shadow-[0_4px_0_0_#d1d5db] focus:outline-none focus:border-blue-500"
               required
             />
